@@ -1,6 +1,6 @@
 # Quake 3 log parser
 
-This is the project I made for the Banking Jr. Software Engineer opening
+This is the project I made for the Jr. Software Engineer opening
 
 <details>
 <summary><h3><b>Project Info</b></h3></summary>
