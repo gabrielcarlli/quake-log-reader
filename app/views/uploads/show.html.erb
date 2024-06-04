@@ -25,7 +25,11 @@
                 <%= match[1][:total_deaths] %> <span style='color: cyan;'>Deaths</span>, 
                 <%= match[1][:world_deaths] %> <span style='color: green;'>World deaths</span>
                 <br>
-                MVP: <span style='color: gold';><%= match[1][:mvp] %></span>
+                MVP: <% if match[1][:mvp] == 'No MVP' %>
+                    <span style='color: gray;'>None</span>
+                  <% else %>
+                    <span style='color: gold;'><%= match[1][:mvp] %></span>
+                  <% end %>
               </p>
             </div>
             <div class="bg-text" id="match-info-<%= i + 1 %>" style="display: none;">
