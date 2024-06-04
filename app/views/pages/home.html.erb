@@ -1,0 +1,14 @@
+<h1>Quake log reader</h1>
+
+<h2> Please upload a quake .log file</h2>
+
+<%= form_with url: uploads_path, local: true, html: { multipart: true } do |form| %>
+  <div class="field">
+    <%= form.label :log %>
+    <%= form.file_field :log, accept: '.log' %>
+  </div>
+<br>
+  <div class="actions">
+    <%= form.submit "Upload" %>
+  </div>
+<% end %>

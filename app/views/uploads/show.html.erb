@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= javascript_include_tag 'match_parser' %>
+    <%= stylesheet_link_tag 'match_viewer', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="bg-image"></div>
+    <div class="content-wrapper">
+      <div class="log-parser">
+        <h1>Quake log reader</h1>
+        <h3>Number of matches: <%= @matches.size %></h3>
+        <br>
+        <% @matches.each_with_index do |match, i| %>
+          <div class="match-container">
+            <div class="match-box" id="match-box-<%= i + 1 %>">
+              <h3>Match <%= i + 1 %></h3>
+              <p> Number of players: <%= match[1][:players].size %></p>
+              <p> 
+                <%= match[1][:total_kills] %> <span style='color: red;'>Kills</span>, 
+                <%= match[1][:total_deaths] %> <span style='color: cyan;'>Deaths</span>, 
+                <%= match[1][:world_deaths] %> <span style='color: green;'>World deaths</span>
+                <br>
+                MVP: <span style='color: gold';><%= match[1][:mvp] %></span>
+              </p>
+            </div>
+            <div class="bg-text" id="match-info-<%= i + 1 %>" style="display: none;">
+              <%= match[1].to_json %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="match-all-info-box">
+        <h2>Match Details</h2>
+        <div class="selected-match">
+          <pre id="json-content"></pre>
+        </div>
+      </div>
+    </div>
+    <script>
+      initializeMatchClickEvents();
+    </script>
+  </body>
+</html>

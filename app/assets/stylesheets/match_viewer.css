@@ -1,0 +1,138 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Reddit Mono', monospace;
+  overflow: hidden; 
+}
+
+.reddit-mono-<uniquifier> {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+* {
+box-sizing: border-box;
+}
+
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/q3a_bg.jpeg") no-repeat center center;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  background-size: cover;
+  z-index: -1;
+}
+
+.log-parser {
+  flex: 0 0 30%;
+  max-width: 800px;
+  height: 100vh;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 3px solid #f1f1f1;
+  text-align: center;
+  font-weight: bold;
+  overflow-y: auto;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.match-all-info-box {
+  flex: 1;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 3px solid #f1f1f1;
+  text-align: center;
+  overflow-y: auto;
+}  
+
+.selected-match {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 0px;
+  text-align: left;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.match-container {
+  width: 100%;
+  border: 2px solid #95aaab;
+  position: relative;
+  margin: 2px;
+  padding: 2px;
+}
+
+.match-container:hover {
+  background-color: gray;
+}
+
+.match-container:target {
+  background-color: red;
+}
+
+.field {
+  margin-left: 80px;
+}
+
+.content-wrapper {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  width: 50%;
+}
+
+td {
+  width: 50%;
+}
+
+table table {
+  width: 100%;
+  border: none;
+}
+
+table table td {
+  border: 1px solid #000;
+  background-color: #292828;
+}
+
+table table th, table table td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  background-color: #444;
+  color: #fff;
+}

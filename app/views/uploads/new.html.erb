@@ -1,0 +1,78 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+</head>
+
+<div class="bg-image"></div>
+
+<div class="log-reader">
+
+  <h1>QUAKE 3 ARENA LOG PARSER</h1>
+
+  <h2> PLEASE UPLOAD A QUAKE LOG FILE OR USE DEMO ONE </h2>
+
+  <%= form_with url: uploads_path, local: true, data: { turbo: false }, html: { multipart: true } do |form| %>
+    <div class="field">
+      <%= form.label :LOG_FILE %>
+      <%= form.file_field :log, accept: '.log' %>
+    </div>
+  <br>
+    <div class="actions">
+      <%= form.submit "UPLOAD" %>
+    </div>
+  <% end %>
+  
+  <%= button_to 'USE DEMO', demo_path, method: :get %>
+
+</div>
+
+<style>
+
+  body, html {
+    height: 100%;
+    font-family: 'Reddit Mono', sans-serif;
+  }
+
+  .reddit-mono-<uniquifier> {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  }
+
+  * {
+  box-sizing: border-box;
+  }
+
+  .log-reader {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .bg-image {
+    background: url("/assets/q3a_bg.jpeg") no-repeat center center;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+  }
+  
+  .field {
+    margin-left: 80px;
+  }
+</style>
